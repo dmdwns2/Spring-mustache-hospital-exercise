@@ -29,7 +29,6 @@ public class HospitalController {
 
     @GetMapping("")
     public String list(Model model, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
-
         model.addAttribute("hospitals", hospitalService.getBoardList(pageable));
         model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
         model.addAttribute("next", pageable.next().getPageNumber());
@@ -39,6 +38,7 @@ public class HospitalController {
     @GetMapping("/search")
     public String search(String keyword, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable , Model model) {
         List<Hospital> searchList =  hospitalRepository.findByTitleContaining(keyword, pageable);
+        model.addAttribute("searchList", searchList);
         return "searchPage";
     }
 }

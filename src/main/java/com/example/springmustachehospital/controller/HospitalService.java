@@ -13,7 +13,6 @@ import java.util.List;
 @Service
 public class HospitalService {
 
-    @Autowired
     HospitalRepository hospitalRepository;
 
     public HospitalService(HospitalRepository hospitalRepository) {
@@ -32,8 +31,6 @@ public class HospitalService {
     // 페이징처리
     @Transactional
     public Page<Hospital> getBoardList(Pageable pageable) {
-
         return hospitalRepository.findAll(pageable);
-
     }
 }
