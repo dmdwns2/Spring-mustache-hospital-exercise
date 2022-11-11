@@ -1,43 +1,33 @@
-package com.example.demo.controller;
+package com.example.spirngmustachhospital.controller;
 
-import com.example.demo.Dao.HospitalDao;
-import com.example.demo.domain.Hospital;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import com.mustache.bbs5.domain.Hospital;
+import com.mustache.bbs5.repository.HospitalRepository;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
-
-@RestController
-@RequestMapping("/api/v1")
+@Controller
+@RequestMapping("/hospitals")
+@Slf4j
 public class HospitalController {
+    private final HospitalRepository hospitalRepository;
 
-    private final HospitalDao hospitalDao;
-
-    public HospitalController(HospitalDao hospitalDao) {
-        this.hospitalDao = hospitalDao;
+    public HospitalController(HospitalRepository hospitalRepository) {
+        this.hospitalRepository = hospitalRepository;
     }
 
-//     1병원 이름, 2주소, 3도로명주소, 4의료진 수, 5병상 수, 6면적
 
-//    @GetMapping("/name3")
-//    public Hospital name3() {
-//        return hospitalDao.findById(110000); // name부분만 어떻게 가져올지
-//    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Hospital> get(@PathVariable Integer id) {
-        Hospital hospital = hospitalDao.findById(id);
-        Optional<Hospital> opt = Optional.of(hospital);
-
-        if (!opt.isEmpty()) {
-            return ResponseEntity.ok().body(hospital);
-        } else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Hospital());
-        }
+    @GetMapping("")
+    public String list(Model model, Pageable pageable) {
+        Page<Hospital> hospitals = hospitalRepository.findAll(pageable);
+        log.info("size:{}", hospitals.getSize());
+        model.addAttribute("hospitals", hospitals);
+        model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
+        model.addAttribute("next", pageable.next().getPageNumber());
+        return "hospital/list";
     }
 }
-

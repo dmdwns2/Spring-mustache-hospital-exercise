@@ -1,35 +1,25 @@
-package com.example.demo.domain;
+package com.example.spirngmustachhospital.domain;
 
-
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-import java.time.LocalDateTime;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-@AllArgsConstructor
+@Entity
+@Table(name = "nation_wide_hospitals")
 @Getter
-@Setter
-@NoArgsConstructor // 빈 추가
 public class Hospital {
+    @Id
+    private Integer id;
 
-    private int id;
-    private String openServiceName;
-    private int openLocalGovernmentCode;
-    private String managementNumber;
-    private LocalDateTime licenseDate;
-    private int businessStatus;
-    private int businessStatusCode;
-    private String phone;
-    private String fullAddress;
+    @Column(name = "road_name_address")
     private String roadNameAddress;
+
+    @Column(name = "hospital_name")
     private String hospitalName;
-    private String businessTypeName;
-    private int healthcareProviderCount;
-    private int patientRoomCount;
-    private int totalNumberOfBeds;
-    private float totalAreaSize;
-
-
+    private Integer patientRoomCount;
+    private Integer totalNumberOfBeds;
+    private Float totalAreaSize;
 }
