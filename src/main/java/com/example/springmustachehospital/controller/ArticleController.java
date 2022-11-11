@@ -1,8 +1,8 @@
-package com.example.spirngmustachhospital.controller;
+package com.example.springmustachehospital.controller;
 
-import com.mustache.bbs5.domain.Article;
-import com.mustache.bbs5.domain.ArticleDto;
-import com.mustache.bbs5.repository.ArticleRepository;
+import com.example.springmustachehospital.domain.Article;
+import com.example.springmustachehospital.domain.ArticleDto;
+import com.example.springmustachehospital.repository.ArticleRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

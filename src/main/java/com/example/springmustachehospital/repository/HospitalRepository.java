@@ -1,6 +1,7 @@
-package com.example.spirngmustachhospital.repository;
+package com.example.springmustachehospital.repository;
 
-import com.mustache.bbs5.domain.Hospital;
+
+import com.example.springmustachehospital.domain.Hospital;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface HospitalRepository extends JpaRepository<Hospital, Integer> {

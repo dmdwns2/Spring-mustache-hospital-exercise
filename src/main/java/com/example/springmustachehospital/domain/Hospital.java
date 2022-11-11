@@ -1,4 +1,4 @@
-package com.example.spirngmustachhospital.domain;
+package com.example.springmustachehospital.domain;
 
 import lombok.Getter;
 

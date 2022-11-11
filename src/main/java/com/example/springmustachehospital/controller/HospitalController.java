@@ -1,7 +1,7 @@
-package com.example.spirngmustachhospital.controller;
+package com.example.springmustachehospital.controller;
 
-import com.mustache.bbs5.domain.Hospital;
-import com.mustache.bbs5.repository.HospitalRepository;
+import com.example.springmustachehospital.domain.Hospital;
+import com.example.springmustachehospital.repository.HospitalRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -1,4 +1,4 @@
-package com.example.spirngmustachhospital;
+package com.example.springmustachehospital;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
