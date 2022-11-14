@@ -3,17 +3,16 @@
 <table class="table">
     <thead class="thead-light">
     <tr>
-        <th scope="col">ID</th>
-        <th scope="col">제목</th>
-        <th scope="col">내용</th>
-
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
     </tr>
     </thead>
     {{#searchList}}
         <tbody>
         <tr>
-            <td>{{id}}td>
-            <td>{{title}}</td>
+            <th scope="row">{{id}}</th>
+            <td><a href="/articles/{{id}}">{{title}}</a></td>
             <td>{{content}}</td>
         </tr>
         </tbody>

@@ -4,6 +4,7 @@ import com.example.springmustachehospital.domain.Hospital;
 import com.example.springmustachehospital.repository.HospitalRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -19,26 +20,38 @@ import java.util.List;
 @Slf4j
 public class HospitalController {
     private final HospitalRepository hospitalRepository;
-    private final HospitalService hospitalService;
+//    private final HospitalService hospitalService;
 
     @Autowired
-    public HospitalController(HospitalRepository hospitalRepository, HospitalService hospitalService) {
+    public HospitalController(HospitalRepository hospitalRepository) {
+//    public HospitalController(HospitalRepository hospitalRepository, HospitalService hospitalService) {
         this.hospitalRepository = hospitalRepository;
-        this.hospitalService = hospitalService;
+//        this.hospitalService = hospitalService;
     }
 
     @GetMapping("")
-    public String list(Model model, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
-        model.addAttribute("hospitals", hospitalService.getBoardList(pageable));
+    public String list(Model model, Pageable pageable) {
+        Page<Hospital> hospitals = hospitalRepository.findAll(pageable);
+        log.info("size:{}", hospitals.getSize());
+        model.addAttribute("hospitals", hospitals);
         model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
         model.addAttribute("next", pageable.next().getPageNumber());
         return "hospital/list";
     }
 
-    @GetMapping("/search")
-    public String search(String keyword, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable , Model model) {
-        List<Hospital> searchList =  hospitalRepository.findByTitleContaining(keyword, pageable);
-        model.addAttribute("searchList", searchList);
-        return "searchPage";
-    }
+//    @GetMapping("")
+//    public String list(Model model, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
+//        log.info(String.valueOf(pageable.getPageNumber()));
+//        model.addAttribute("hospitals", hospitalService.getHospitalList(pageable));
+//        model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
+//        model.addAttribute("next", pageable.next().getPageNumber());
+//        return "hospital/list";
+//    }
+
+//    @GetMapping("/search")
+//    public String search(String keyword, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable , Model model) {
+//        List<Hospital> searchList =  hospitalRepository.findByTitleContaining(keyword, pageable);
+//        model.addAttribute("searchList", searchList);
+//        return "searchPage";
+//    }
 }
