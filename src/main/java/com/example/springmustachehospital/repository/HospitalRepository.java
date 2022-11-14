@@ -10,4 +10,5 @@ import java.util.List;
 public interface HospitalRepository extends JpaRepository<Hospital, Integer> {
 //    List<Hospital> findByTitleContaining(String keyword, Pageable pageable);
 
+    List<Hospital> findByBusinessTypeNameIn(List<String> businessTypes);
 }
