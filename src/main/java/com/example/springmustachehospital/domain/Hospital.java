@@ -2,6 +2,7 @@ package com.example.springmustachehospital.domain;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,6 +24,7 @@ public class Hospital {
     private Integer patientRoomCount;
     private Integer totalNumberOfBeds;
     private String businessTypeName;
+    private Integer businessStatusCode;
     private Float totalAreaSize;
 
     //엔티티를 바로 쓰지않고 HospitalResponse, of로 변환해서 쓰겠다.
