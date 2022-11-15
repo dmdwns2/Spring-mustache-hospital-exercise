@@ -14,9 +14,4 @@ public class HospitalResponse {
     private String businessTypeName;
     private Float totalAreaSize;
 
-    public HospitalResponse(Integer id, String roadNameAddress, String hospitalName) {
-        this.id = id;
-        this.roadNameAddress = roadNameAddress;
-        this.hospitalName = hospitalName;
-    }
 }

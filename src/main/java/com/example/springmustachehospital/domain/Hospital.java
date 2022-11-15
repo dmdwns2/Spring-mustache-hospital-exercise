@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 @Entity
 @Table(name = "nation_wide_hospitals")
 @Getter
@@ -24,8 +25,13 @@ public class Hospital {
     private String businessTypeName;
     private Float totalAreaSize;
 
+    //엔티티를 바로 쓰지않고 HospitalResponse, of로 변환해서 쓰겠다.
+// HospitalEntity를 HospitalResponse Dto로 만들어주는 부분
     public static HospitalResponse of(Hospital hospital) {
-        return new HospitalResponse(hospital.getId(), hospital.getHospitalName(), hospital.getRoadNameAddress());
+        return new HospitalResponse(hospital.getId(),
+                hospital.getRoadNameAddress(), hospital.getHospitalName(),
+                hospital.getPatientRoomCount(), hospital.getTotalNumberOfBeds(), hospital.getBusinessTypeName(),
+                hospital.getTotalAreaSize());
     }
 }
 
