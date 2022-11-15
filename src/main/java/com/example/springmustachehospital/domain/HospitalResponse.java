@@ -1,12 +1,10 @@
 package com.example.springmustachehospital.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 public class HospitalResponse {
     private Integer id;
