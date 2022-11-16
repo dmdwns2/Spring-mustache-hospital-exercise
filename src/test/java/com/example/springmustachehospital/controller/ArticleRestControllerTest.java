@@ -1,5 +1,6 @@
 package com.example.springmustachehospital.controller;
 
+import com.example.springmustachehospital.domain.ArticleDto;
 import com.example.springmustachehospital.domain.ArticleResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -10,6 +11,11 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.verify;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(ArticleRestController.class)
 class ArticleRestControllerTest {
@@ -21,14 +27,21 @@ class ArticleRestControllerTest {
     ArticleService articleService;
 
     @Test
-    @DisplayName("등록이 잘 되는지")
-    public void response(){
-        ArticleResponse articleResponse = ArticleResponse.builder()
-                .id((long)1)
-                .title("하이")
-                .content("바이")
-                .build();
+    @DisplayName("해당 id의 글이 조회가 잘 되는지")
+    void findSingle() throws Exception {
+        Long id = 1l;
 
-        given()
+        given(articleService.getArticleById(id))
+                .willReturn(new ArticleDto(1l, "첫번째 글", "내용입니다."));
+
+        mockMvc.perform(get("/api/v1/articles/1"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").exists())
+                .andExpect(jsonPath("$.title").exists())
+                .andExpect(jsonPath("$.content").exists())
+                .andDo(print());
+
+        verify(articleService).getArticleById(id);
     }
 }
+
