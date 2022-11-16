@@ -3,7 +3,9 @@ package com.example.springmustachehospital.controller;
 import com.example.springmustachehospital.domain.Article;
 import com.example.springmustachehospital.domain.ArticleDto;
 import com.example.springmustachehospital.repository.ArticleRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Optional;
 
@@ -20,5 +22,12 @@ public class ArticleService {
         Optional<Article> optArticle = articleRepository.findById(id);
         ArticleDto articleDto = Article.of(optArticle.get());
         return articleDto;
+    }
+
+
+    public ArticleAddResponse add(ArticleAddRequest dto) {
+        Article article = dto.toEntity();
+        Article savedArticle = articleRepository.save(article);
+        return new ArticleAddResponse(savedArticle.getId(), savedArticle.getTitle(), savedArticle.getContent());
     }
 }
