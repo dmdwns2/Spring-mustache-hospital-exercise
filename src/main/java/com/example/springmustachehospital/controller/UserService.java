@@ -1,6 +1,7 @@
 package com.example.springmustachehospital.controller;
 
 import com.example.springmustachehospital.domain.User;
+import com.example.springmustachehospital.domain.UserRequest;
 import com.example.springmustachehospital.domain.UserResponse;
 import com.example.springmustachehospital.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -23,5 +24,13 @@ public class UserService {
             User user = optUser.get();
             return new UserResponse(user.getId(), user.getUsername(), "");
         }
+    }
+
+    public UserResponse addUser(UserRequest dto) {
+        // dto를 entity로
+        User user = dto.toEntity();
+        User savedUser = userRepository.save(user);
+        return new UserResponse(savedUser.getId(), savedUser.getUsername(), "회원 등록 성공");
+
     }
 }

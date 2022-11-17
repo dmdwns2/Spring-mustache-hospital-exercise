@@ -11,11 +11,5 @@ public class UserDto {
     String username;
     String password;
 
-    public User toEntity(Long id, String username, String password) {
-        return new User(
-                this.id,
-                this.username,
-                this.password);
 
-    }
 }
