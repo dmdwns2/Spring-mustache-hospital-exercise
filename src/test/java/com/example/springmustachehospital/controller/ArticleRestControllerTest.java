@@ -46,24 +46,24 @@ class ArticleRestControllerTest {
         verify(articleService).getArticleById(id);
     }
 
-    @Test
-    @DisplayName("글 등록이 잘 되는지")
-    void add() throws Exception {
-        ArticleAddRequest dto = new ArticleAddRequest("제목입니다", "내용입니다.");
-
-        given(articleService.add(dto)).willReturn(new ArticleAddResponse(1l, dto.getTitle(), dto.getContent()));
-
-        mockMvc.perform(post("/api/v1/articles")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsBytes(new ArticleAddRequest("제목입니다", "내용입니다.")))
-                )
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").exists())
-                .andExpect(jsonPath("$.title").exists())
-                .andExpect(jsonPath("$.content").exists())
-                .andDo(print());
-
-        verify(articleService).add(dto);
-    }
+//    @Test
+//    @DisplayName("글 등록이 잘 되는지")
+//    void add() throws Exception {
+//        ArticleAddRequest dto = new ArticleAddRequest("제목입니다", "내용입니다.");
+//
+//        given(articleService.add(dto)).willReturn(new ArticleAddResponse(1l, dto.getTitle(), dto.getContent()));
+//
+//        mockMvc.perform(post("/api/v1/articles")
+//                        .contentType(MediaType.APPLICATION_JSON)
+//                        .content(objectMapper.writeValueAsBytes(new ArticleAddRequest("제목입니다", "내용입니다.")))
+//                )
+//                .andExpect(status().isOk())
+//                .andExpect(jsonPath("$.id").exists())
+//                .andExpect(jsonPath("$.title").exists())
+//                .andExpect(jsonPath("$.content").exists())
+//                .andDo(print());
+//
+//        verify(articleService).add(dto);
+//    }
 }
 
