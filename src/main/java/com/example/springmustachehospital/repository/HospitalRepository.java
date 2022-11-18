@@ -9,7 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface HospitalRepository extends JpaRepository<Hospital, Integer> {
-//    List<Hospital> findByTitleContaining(String keyword, Pageable pageable);
 
     List<Hospital> findByBusinessTypeNameIn(List<String> businessTypes);
     Page<Hospital> findByRoadNameAddressContaining(String keyword, Pageable pageable); // 포함

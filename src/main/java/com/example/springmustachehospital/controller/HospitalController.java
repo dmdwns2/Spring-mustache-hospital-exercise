@@ -21,24 +21,11 @@ import java.util.List;
 @Slf4j
 public class HospitalController {
     private final HospitalRepository hospitalRepository;
-//    private final HospitalService hospitalService;
 
     @Autowired
     public HospitalController(HospitalRepository hospitalRepository) {
-//    public HospitalController(HospitalRepository hospitalRepository, HospitalService hospitalService) {
         this.hospitalRepository = hospitalRepository;
-//        this.hospitalService = hospitalService;
     }
-
-//    @GetMapping("")
-//    public String list(Model model, Pageable pageable) {
-//        Page<Hospital> hospitals = hospitalRepository.findAll(pageable);
-//        log.info("size:{}", hospitals.getSize());
-//        model.addAttribute("hospitals", hospitals);
-//        model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
-//        model.addAttribute("next", pageable.next().getPageNumber());
-//        return "hospital/list";
-//    }
 
     @GetMapping("")
     public String list(@RequestParam String keyword, Pageable pageable, Model model) {
@@ -51,19 +38,4 @@ public class HospitalController {
         return "hospital/list";
     }
 
-//    @GetMapping("")
-//    public String list(Model model, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
-//        log.info(String.valueOf(pageable.getPageNumber()));
-//        model.addAttribute("hospitals", hospitalService.getHospitalList(pageable));
-//        model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
-//        model.addAttribute("next", pageable.next().getPageNumber());
-//        return "hospital/list";
-//    }
-
-//    @GetMapping("/search")
-//    public String search(String keyword, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable , Model model) {
-//        List<Hospital> searchList =  hospitalRepository.findByTitleContaining(keyword, pageable);
-//        model.addAttribute("searchList", searchList);
-//        return "searchPage";
-//    }
 }
