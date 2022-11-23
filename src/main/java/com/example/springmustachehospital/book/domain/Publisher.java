@@ -22,7 +22,4 @@ public class Publisher {
     private String name;
     private String address;
 
-    @OneToOne
-    @JoinColumn(name = "publisher_id")
-    private Publisher publisher;
 }
