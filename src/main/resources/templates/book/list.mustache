@@ -1,0 +1,20 @@
+{{>layouts/header}}
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Author</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#books}}
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td><a href="/books/{{id}}">{{name}}</a></td>
+            <td>{{content}}</td>
+        </tr>
+    {{/books}}
+    </tbody>
+</table>
+{{>layouts/footer}}
