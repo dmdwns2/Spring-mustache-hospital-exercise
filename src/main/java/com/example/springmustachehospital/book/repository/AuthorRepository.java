@@ -1,6 +1,6 @@
-package com.example.jpa.repository;
+package com.example.springmustachehospital.book.repository;
 
-import com.example.jpa.domain.Author;
+import com.example.springmustachehospital.book.domain.Author;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AuthorRepository extends JpaRepository<Author, Long> {

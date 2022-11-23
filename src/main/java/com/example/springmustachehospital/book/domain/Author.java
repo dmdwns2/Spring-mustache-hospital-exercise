@@ -1,4 +1,4 @@
-package com.example.jpa.domain;
+package com.example.springmustachehospital.book.domain;
 
 
 import lombok.*;

@@ -1,8 +1,8 @@
-package com.example.jpa.controller;
+package com.example.springmustachehospital.book.controller;
 
-import com.example.jpa.domain.Book;
-import com.example.jpa.domain.BookResponse;
-import com.example.jpa.service.BookService;
+import com.example.springmustachehospital.book.domain.Book;
+import com.example.springmustachehospital.book.domain.BookResponse;
+import com.example.springmustachehospital.book.service.BookService;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

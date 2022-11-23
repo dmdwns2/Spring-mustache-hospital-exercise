@@ -1,11 +1,11 @@
-package com.example.jpa.service;
+package com.example.springmustachehospital.book.service;
 
-import com.example.jpa.domain.Author;
-import com.example.jpa.domain.Book;
-import com.example.jpa.domain.BookResponse;
-import com.example.jpa.repository.AuthorRepository;
-import com.example.jpa.repository.BookRepository;
-import com.example.jpa.repository.PublisherRepository;
+import com.example.springmustachehospital.book.domain.Author;
+import com.example.springmustachehospital.book.domain.Book;
+import com.example.springmustachehospital.book.domain.BookResponse;
+import com.example.springmustachehospital.book.repository.AuthorRepository;
+import com.example.springmustachehospital.book.repository.BookRepository;
+import com.example.springmustachehospital.book.repository.PublisherRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

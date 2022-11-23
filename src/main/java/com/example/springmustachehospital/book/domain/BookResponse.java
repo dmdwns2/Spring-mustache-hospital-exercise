@@ -1,8 +1,5 @@
-package com.example.jpa.domain;
+package com.example.springmustachehospital.book.domain;
 
-import com.example.jpa.repository.AuthorRepository;
-import com.example.jpa.repository.BookRepository;
-import com.example.jpa.repository.PublisherRepository;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

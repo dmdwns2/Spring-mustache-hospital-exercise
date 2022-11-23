@@ -1,7 +1,7 @@
-package com.example.jpa.controller;
+package com.example.springmustachehospital.book.controller;
 
-import com.example.jpa.domain.Book;
-import com.example.jpa.repository.BookRepository;
+import com.example.springmustachehospital.book.domain.Book;
+import com.example.springmustachehospital.book.repository.BookRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
