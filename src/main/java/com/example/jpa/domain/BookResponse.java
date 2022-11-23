@@ -18,7 +18,7 @@ public class BookResponse {
     private String bookName;
     private String authorName;
 
-    private static BookResponse of(Book book, String authorName){
+    public static BookResponse of(Book book, String authorName){
         return BookResponse.builder()
                 .bookId(book.getId())
                 .bookName(book.getName())
