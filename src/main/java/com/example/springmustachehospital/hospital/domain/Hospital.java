@@ -5,10 +5,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Builder
 @AllArgsConstructor
@@ -30,6 +28,10 @@ public class Hospital {
     private String businessTypeName;
     private Integer businessStatusCode;
     private Float totalAreaSize;
+
+    //일대다 매칭
+    @OneToMany(mappedBy = "hospital", fetch = FetchType.LAZY)
+    private List<Review> reviews;
 
     //엔티티를 바로 쓰지않고 HospitalResponse, of로 변환해서 쓰겠다.
 // HospitalEntity를 HospitalResponse Dto로 만들어주는 부분

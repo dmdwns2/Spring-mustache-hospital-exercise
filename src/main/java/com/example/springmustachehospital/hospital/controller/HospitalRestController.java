@@ -1,6 +1,8 @@
 package com.example.springmustachehospital.hospital.controller;
 
+import com.example.springmustachehospital.hospital.domain.Hospital;
 import com.example.springmustachehospital.hospital.domain.HospitalResponse;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +18,13 @@ public class HospitalRestController {
     public HospitalRestController(HospitalService hospitalService) {
         this.hospitalService = hospitalService;
     }
+
+
+    @GetMapping("")
+    public ResponseEntity<HospitalResponse> list(Pageable pageable){
+        return ResponseEntity.ok().body(hospitalService.findHospital(pageable));
+    }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<HospitalResponse> get(@PathVariable Integer id) { // ResponseEntity도 DTO타입
