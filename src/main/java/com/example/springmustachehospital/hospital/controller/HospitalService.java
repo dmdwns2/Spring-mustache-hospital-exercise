@@ -1,6 +1,6 @@
 package com.example.springmustachehospital.hospital.controller;
 
-import com.example.springmustachehospital.domain.Hospital;
+import com.example.springmustachehospital.hospital.domain.Hospital;
 import com.example.springmustachehospital.hospital.domain.HospitalResponse;
 import com.example.springmustachehospital.hospital.repository.HospitalRepository;
 import org.springframework.stereotype.Service;
