@@ -1,9 +1,10 @@
 package com.example.springmustachehospital.controller;
 
-import com.example.springmustachehospital.domain.User;
-import com.example.springmustachehospital.domain.UserRequest;
-import com.example.springmustachehospital.domain.UserResponse;
-import com.example.springmustachehospital.repository.UserRepository;
+import com.example.springmustachehospital.user.controller.UserService;
+import com.example.springmustachehospital.user.domain.User;
+import com.example.springmustachehospital.user.domain.UserRequest;
+import com.example.springmustachehospital.user.domain.UserResponse;
+import com.example.springmustachehospital.user.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

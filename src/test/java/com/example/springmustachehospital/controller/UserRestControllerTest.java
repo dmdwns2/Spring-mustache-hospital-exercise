@@ -1,6 +1,8 @@
 package com.example.springmustachehospital.controller;
 
-import com.example.springmustachehospital.domain.UserResponse;
+import com.example.springmustachehospital.user.controller.UserRestController;
+import com.example.springmustachehospital.user.controller.UserService;
+import com.example.springmustachehospital.user.domain.UserResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
