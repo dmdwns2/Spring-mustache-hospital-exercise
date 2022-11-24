@@ -1,12 +1,10 @@
 package com.example.springmustachehospital.hospital.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
+@Builder
 @Entity
 @Getter
 @Setter
@@ -26,4 +24,13 @@ public class Review {
     @ManyToOne
     @JoinColumn(name = "hospital_id")
     private Hospital hospital;
+
+    public static Review of(Hospital hospital, String title, String content, String userName) {
+        Review review = new Review();
+        review.setHospital(hospital);
+        review.setTitle(title);
+        review.setContent(content);
+        review.setUserName(userName);
+        return review;
+    }
 }
