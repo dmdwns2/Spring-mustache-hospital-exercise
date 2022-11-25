@@ -5,7 +5,6 @@ import com.example.springmustachehospital.hospital.domain.Review;
 import com.example.springmustachehospital.hospital.repository.HospitalRepository;
 import com.example.springmustachehospital.hospital.repository.ReviewRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;

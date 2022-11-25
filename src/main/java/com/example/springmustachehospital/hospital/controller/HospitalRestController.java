@@ -1,10 +1,8 @@
 package com.example.springmustachehospital.hospital.controller;
 
-import com.example.springmustachehospital.article.controller.ArticleAddRequest;
-import com.example.springmustachehospital.article.controller.ArticleAddResponse;
-import com.example.springmustachehospital.hospital.domain.Hospital;
 import com.example.springmustachehospital.hospital.domain.HospitalResponse;
 import com.example.springmustachehospital.hospital.domain.Review;
+import com.example.springmustachehospital.hospital.service.HospitalService;
 import com.example.springmustachehospital.hospital.service.ReviewService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
