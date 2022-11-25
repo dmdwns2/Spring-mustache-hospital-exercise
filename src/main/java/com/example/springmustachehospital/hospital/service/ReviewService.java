@@ -6,6 +6,8 @@ import com.example.springmustachehospital.hospital.domain.ReviewCreateRequest;
 import com.example.springmustachehospital.hospital.domain.ReviewCreateResponse;
 import com.example.springmustachehospital.hospital.repository.HospitalRepository;
 import com.example.springmustachehospital.hospital.repository.ReviewRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -40,5 +42,11 @@ public class ReviewService {
         Review savedReview = reviewRepository.save(Review.of(
                 optionalHospital.orElseThrow(() -> new IllegalArgumentException("해당 hospitalId에 해당하는 병원이 없습니다.")),
                         dto.getTitle(), dto.getContent(), dto.getUserName()));
+    }
+
+
+    // 작성해봤는데 맞는지 모르겠음
+    public Page<Review> get(Integer hospitalId, Pageable pageable) {
+        return reviewRepository.findByHospitalId(hospitalId,pageable);
     }
 }

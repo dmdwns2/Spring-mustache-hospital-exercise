@@ -1,6 +1,7 @@
 package com.example.springmustachehospital.article.controller;
 
 import com.example.springmustachehospital.article.domain.ArticleDto;
+import com.example.springmustachehospital.article.service.ArticleService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

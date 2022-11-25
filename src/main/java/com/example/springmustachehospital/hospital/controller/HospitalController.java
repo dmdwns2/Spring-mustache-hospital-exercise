@@ -50,4 +50,5 @@ public class HospitalController {
         model.addAttribute("hospital", hospital.get());
         model.addAttribute("reviews", reviews);
         return "hospital/show";
+    }
 }

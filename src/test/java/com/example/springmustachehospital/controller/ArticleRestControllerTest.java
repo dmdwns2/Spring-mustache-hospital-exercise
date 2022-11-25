@@ -1,7 +1,7 @@
 package com.example.springmustachehospital.controller;
 
 import com.example.springmustachehospital.article.controller.ArticleRestController;
-import com.example.springmustachehospital.article.controller.ArticleService;
+import com.example.springmustachehospital.article.service.ArticleService;
 import com.example.springmustachehospital.article.domain.ArticleDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
