@@ -1,7 +1,7 @@
 package com.example.springmustachehospital.controller;
 
-import com.example.springmustachehospital.domain.Hospital;
 import com.example.springmustachehospital.hospital.controller.HospitalService;
+import com.example.springmustachehospital.hospital.domain.Hospital;
 import com.example.springmustachehospital.hospital.domain.HospitalResponse;
 import com.example.springmustachehospital.hospital.repository.HospitalRepository;
 import org.junit.jupiter.api.BeforeEach;

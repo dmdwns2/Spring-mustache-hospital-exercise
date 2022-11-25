@@ -11,9 +11,4 @@ public class HospitalService {
         this.hospitalRepository = hospitalRepository;
     }
 
-//    public HospitalAddResponse add(HospitalAddRequest dto) {
-//        Hospital hospital = dto.toEntity();
-//        Hospital savedArticle = hospitalRepository.save(hospital);
-//        return new ArticleAddResponse(savedArticle.getId(), savedArticle.getTitle(), savedArticle.getContent());
-//    }
 }
