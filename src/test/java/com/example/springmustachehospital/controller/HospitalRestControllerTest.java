@@ -1,7 +1,6 @@
 package com.example.springmustachehospital.controller;
 
 import com.example.springmustachehospital.hospital.controller.HospitalRestController;
-import com.example.springmustachehospital.hospital.controller.HospitalService;
 import com.example.springmustachehospital.hospital.domain.HospitalResponse;
 import com.example.springmustachehospital.hospital.service.HospitalService;
 import org.junit.jupiter.api.DisplayName;
