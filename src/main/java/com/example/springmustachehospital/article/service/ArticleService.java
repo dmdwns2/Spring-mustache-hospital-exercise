@@ -1,5 +1,7 @@
-package com.example.springmustachehospital.article.controller;
+package com.example.springmustachehospital.article.service;
 
+import com.example.springmustachehospital.article.controller.ArticleAddRequest;
+import com.example.springmustachehospital.article.controller.ArticleAddResponse;
 import com.example.springmustachehospital.article.domain.Article;
 import com.example.springmustachehospital.article.domain.ArticleDto;
 import com.example.springmustachehospital.article.repository.ArticleRepository;
