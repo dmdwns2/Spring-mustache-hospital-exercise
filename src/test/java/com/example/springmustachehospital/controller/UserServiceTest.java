@@ -30,7 +30,7 @@ class UserServiceTest {
                 .thenReturn(new User(1l, "ejkim", "1234"));
 
         UserResponse userResponse = userService.addUser(new UserRequest("ejkim", "1234"));
-        assertEquals("Ko", userResponse.getUsername());
+        assertEquals("ejkim", userResponse.getUsername());
         assertEquals("등록이 완료되었습니다.", userResponse.getMessage());
     }
 }
