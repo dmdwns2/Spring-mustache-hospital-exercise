@@ -22,8 +22,8 @@ public class Book {
     private Long author_id;
     private Long publisher_id;
 
-
-    @OneToOne
-    @JoinColumn(name = "publisher_id")
-    private Publisher publisher;
+//
+//    @OneToOne
+//    @JoinColumn(name = "publisher_id")
+//    private Publisher publisher;
 }

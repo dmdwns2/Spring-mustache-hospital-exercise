@@ -19,7 +19,6 @@ public class ArticleRestController {
     public ResponseEntity<ArticleDto> getArticle(@PathVariable Long id) {
         ArticleDto articleDto = articleService.getArticleById(id);
         return ResponseEntity.ok().body(articleDto);
-
     }
     @PostMapping
     public ResponseEntity<ArticleAddResponse> addArticle(ArticleAddRequest dto) {
